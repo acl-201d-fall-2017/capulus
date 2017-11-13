@@ -40,6 +40,15 @@ This will be done in the following pages:
         - name and address in header, over background img of cafe
         - more detailed info on three parameters
         -review form at bottom
+    - about Capulus
+        - developer bios
 
 With our app, students and remote workers can search nearby cafes and discover which will provide the best working space. 
 
+## Wireframes
+Links to wireframes (screenshots in wireframe folder in img):
+ - https://wireframe.cc/yckF7O (landing page)
+ - https://wireframe.cc/b9vxip (suggest page)
+ - https://wireframe.cc/3vfKqF (search page)
+ - https://wireframe.cc/XLWySS (cafe profile)
+ - https://wireframe.cc/WRA02O (about page)
