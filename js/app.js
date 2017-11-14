@@ -26,7 +26,7 @@ class Cafe {
         this.comm = Math.ceil((kids + local + neighborhood) / 3);
     }
     rateOverall() {
-        this.overall = Math.ceil((this.work + this.menu + this.comm ) / 3);
+        this.overall = ((this.work + this.menu + this.comm ) / 3).toFixed(1);
     }
 }
 
