@@ -68,10 +68,8 @@ barista.rateOverall();
 
 const landingForm = document.getElementById ('landing-form');
 
-landingForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    let userName = document.getElementById('username').value;
-    localStorage.setItem('username', userName);
+landingForm.addEventListener('submit', function(){
+    localStorage.setItem('username', document.getElementById('username').value);
 });
 
-//const userName = localStorage.getItem('username');
+let userName = localStorage.getItem('username');
