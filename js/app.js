@@ -65,3 +65,12 @@ barista.rateWork (2, 2, 3);
 barista.rateMenu (2, 2, 4);
 barista.rateComm (1, 3, 3);
 barista.rateOverall();
+
+const landingForm = document.getElementById ('landing-form');
+
+landingForm.addEventListener("submit", function(){
+    const userName = document.getElementById('username').value;
+    localStorage.setItem('username', userName.value);
+});
+
+//const userName = localStorage.getItem('username');
