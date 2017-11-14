@@ -66,10 +66,41 @@ barista.rateMenu (2, 2, 4);
 barista.rateComm (1, 3, 3);
 barista.rateOverall();
 
-const landingForm = document.getElementById ('landing-form');
 
-landingForm.addEventListener('submit', function(){
-    localStorage.setItem('username', document.getElementById('username').value);
-});
+// let userName;
+// let newUser;
 
-let userName = localStorage.getItem('username');
+if (document.getElementById('index') != null) {
+    const landingForm = document.getElementById ('landing-form');
+
+    landingForm.addEventListener('submit', function(){
+        let userName = document.getElementById('username').value;
+        localStorage.setItem('username', JSON.stringify(userName));
+        //'username' is the key, therefore must be used to access past this point
+    });
+}
+
+
+
+
+if (document.getElementById('search') != null) {
+
+    let newUser = JSON.parse(localStorage.username);
+    //This will render the username onto the search page
+    const greeting = document.getElementById('greeting');
+    greeting.textContent = 'Hello, ' + newUser + '. Find your space.';
+}
+
+
+
+
+
+// This will render the cafe items to the search page
+
+// create div for thumbnail
+// add attribute class
+// set att value 'class name'
+
+// create div for h1 overall rating
+// add attribute for id
+// att text content === overall
