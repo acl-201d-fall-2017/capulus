@@ -97,10 +97,18 @@ if (document.getElementById('search') != null) {
         const searchPage = document.getElementById('thumbnail-wrapper');
         const cafeBlock = document.createElement('div');
         cafeBlock.setAttribute('class', 'cafeBlock');
-        cafeBlock.style.backgroundImage = url(cafes[i].src);
+        cafeBlock.style.backgroundImage = 'url(' + cafes[i].src + ')';
+        const cafeName = document.createElement('h2');
+        cafeName.textContent = cafes[i].name;
+        const cafeRating = document.createElement('span');
+        cafeRating.textContent = cafes[i].overall;
         searchPage.appendChild(cafeBlock);
+        cafeBlock.appendChild(cafeName);
+        cafeBlock.appendChild(cafeRating);
     }
 }
+
+
 
 
 
