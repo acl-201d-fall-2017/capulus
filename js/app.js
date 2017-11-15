@@ -80,20 +80,23 @@ if (document.getElementById('index') != null) {
     const landingForm = document.getElementById ('landing-form');
 
     landingForm.addEventListener('submit', function(){
-        const userName = document.getElementById('username').value;
-        localStorage.setItem('username', JSON.stringify(userName));
+        const user = document.getElementById('username').value;
+        localStorage.setItem('username', JSON.stringify(user));
         //'username' is the key, therefore must be used to access past this point
     });
 }
 
 //This will render the username onto the search page
 if (document.getElementById('search') != null) {
+    console.log(localStorage.username);
     const newUser = JSON.parse(localStorage.username);
     const greeting = document.getElementById('greeting');
     greeting.textContent = 'Hello, ' + newUser + '. Find your space.';
 }
 
-//Render cafes on SEARCH page
+let choice;
+
+//Render cafes on SEARCH page, save array of cafe instances to local
 if (document.getElementById('search') != null) {
     for ( let i = 0; i < cafes.length; i++){
         const searchPage = document.getElementById('thumbnail-wrapper');
@@ -102,14 +105,29 @@ if (document.getElementById('search') != null) {
         cafeBlock.style.backgroundImage = 'url(' + cafes[i].src + ')';
         const cafeName = document.createElement('a');
         cafeName.textContent = cafes[i].name;
-        cafeName.setAttribute('href', 'profile.html?id=' + i );
+        cafeName.setAttribute('href', 'profile.html');
+        // event listener
+        cafeName.addEventListener('click', function(){
+            choice = i;
+            // or should it be cafes[i], which would save the instance of the cafe
+            // save index to variable on local storage `choice = i`
+        });
         const cafeRating = document.createElement('span');
         cafeRating.textContent = cafes[i].overall;
         searchPage.appendChild(cafeBlock);
         cafeBlock.appendChild(cafeName);
         cafeBlock.appendChild(cafeRating);
+        localStorage.setItem('cafes', JSON.stringify(cafes));
     }
 }
+
+
+if (document.getElementById('profile') != null) {
+    JSON.parse(localStorage.cafes);
+    const hero = document.getElementById('hero-lg');
+    hero.style.backgroundImage = 'url(' + cafes[choice].src + ')';
+}
+
 
 // take form input, return to user
 if (document.getElementById('suggest-form') != null) {
