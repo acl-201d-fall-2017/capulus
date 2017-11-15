@@ -46,12 +46,14 @@ pearl.rateComm(3, 5, 3);
 pearl.rateOverall();
 cafes.push(pearl);
 
+
 const albina = new Cafe ('Albina', '4637 N Albina Ave', 'https://www.facebook.com/pages/Albina-Press-Coffeehouse/152791121399765', 'assets/images/albina.jpeg');
 albina.rateWork (3, 3, 5);
 albina.rateMenu (4, 3, 3);
 albina.rateComm (1, 5, 5);
 albina.rateOverall();
 cafes.push(albina);
+
 
 const rohst = new Cafe ('Rohst', '11254 SE 21st Avenue', 'http://www.rohstcoffee.com', 'assets/images/rohst.jpeg');
 rohst.rateWork (2, 4, 4);
