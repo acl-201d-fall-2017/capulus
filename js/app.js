@@ -111,8 +111,9 @@ if (document.getElementById('search') != null) {
         cafeBlock.appendChild(cafeName);
         cafeBlock.appendChild(cafeRating);
         localStorage.setItem('cafes', JSON.stringify(cafes));
-        cafeName.addEventListener('click', function(){
-            localStorage.setItem('choice' , JSON.stringify('id'));
+        cafeName.addEventListener('click', function(e){
+            const id = e.target.id;
+            localStorage.setItem('id' , JSON.stringify(id));
         });
     }
 }
@@ -121,7 +122,7 @@ if (document.getElementById('search') != null) {
 
 if (document.getElementById('profile') != null) {
     JSON.parse(localStorage.cafes);
-    JSON.parse(localStorage.choice);
+    const choice = JSON.parse(localStorage.id);
     const hero = document.getElementById('hero-lg');
     hero.style.backgroundImage = 'url(' + cafes[choice].src + ')';
 }
