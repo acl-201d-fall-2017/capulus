@@ -117,15 +117,54 @@ if (document.getElementById('search') != null) {
         });
     }
 }
-
-
-
 if (document.getElementById('profile') != null) {
     JSON.parse(localStorage.cafes);
     const choice = JSON.parse(localStorage.id);
     const hero = document.getElementById('hero-lg');
     hero.style.backgroundImage = 'url(' + cafes[choice].src + ')';
+    const cafeInfo = document.getElementById('hero-cafe-info');
+    const cafeTitle = document.createElement('h1');
+    cafeTitle.textContent = cafes[choice].name;
+    cafeInfo.appendChild(cafeTitle);
+    const cafeScore = document.createElement('span');
+    cafeScore.textContent = cafes[choice].overall;
+    cafeInfo.appendChild(cafeScore);
+    const cafeAddress = document.createElement('h3');
+    cafeAddress.textContent = cafes[choice].address;
+    cafeInfo.appendChild(cafeAddress);
+
+    //this renders the work icon and overall score
+    const workSection = document.getElementById('work-section');
+    const workWrapper = document.createElement('div');
+    workWrapper.setAttribute('class', 'work-wrapper');
+    const workIcon = document.createElement('img');
+    workIcon.src = 'assets/icons/work-icon.png';
+    const workScore = document.createElement('span');
+    workScore.textContent = cafes[choice].work;
+    workWrapper.appendChild(workIcon);
+    workWrapper.appendChild(workScore);
+    workSection.appendChild(workWrapper);
+
+    const workRatings = document.createElement('div');
+    workRatings.setAttribute('class','work-ratings');
+    const spaceTitle = document.createElement('h4');
+    spaceTitle.textContent = 'Space';
+    const spaceCups = document.createElement('div');
+    spaceCups.setAttribute('class', 'cups');
+
+    for(let i = cafes[choice].space; i > 0; i--){
+        const cupIcon = document.createElement('img');
+        cupIcon.src = 'assets/icons/cup-icon.png';
+        spaceCups.appendChild(cupIcon);
+    }
+
+    workRatings.appendChild(spaceTitle);
+    workRatings.appendChild(spaceCups);
+    workSection.appendChild(workRatings);
+
 }
+
+
 
 
 // take form input, return to user
@@ -152,9 +191,10 @@ if (document.getElementById('suggest-form') != null) {
         suggestList.appendChild(listItemAddress);
         suggestList.appendChild(listItemSite);
         suggestion.appendChild(suggestList);
-        //Need to move the rendering out of click handler, constants called w/in handler not scoped to outside. Fix this. Eventually. Stretch goal. 
+        //Need to move the rendering out of click handler, constants called w/in handler not scoped to outside. Fix this. Eventually. Stretch goal.
     });
 }
+
 
 
 
