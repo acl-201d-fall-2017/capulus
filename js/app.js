@@ -94,8 +94,6 @@ if (document.getElementById('search') != null) {
     greeting.textContent = 'Hello, ' + newUser + '. Find your space.';
 }
 
-let choice;
-
 //Render cafes on SEARCH page, save array of cafe instances to local
 if (document.getElementById('search') != null) {
     for ( let i = 0; i < cafes.length; i++){
@@ -106,24 +104,24 @@ if (document.getElementById('search') != null) {
         const cafeName = document.createElement('a');
         cafeName.textContent = cafes[i].name;
         cafeName.setAttribute('href', 'profile.html');
-        // event listener
-        cafeName.addEventListener('click', function(){
-            choice = i;
-            // or should it be cafes[i], which would save the instance of the cafe
-            // save index to variable on local storage `choice = i`
-        });
+        cafeName.setAttribute('id', i);
         const cafeRating = document.createElement('span');
         cafeRating.textContent = cafes[i].overall;
         searchPage.appendChild(cafeBlock);
         cafeBlock.appendChild(cafeName);
         cafeBlock.appendChild(cafeRating);
         localStorage.setItem('cafes', JSON.stringify(cafes));
+        cafeName.addEventListener('click', function(){
+            localStorage.setItem('choice' , JSON.stringify('id'));
+        });
     }
 }
 
 
+
 if (document.getElementById('profile') != null) {
     JSON.parse(localStorage.cafes);
+    JSON.parse(localStorage.choice);
     const hero = document.getElementById('hero-lg');
     hero.style.backgroundImage = 'url(' + cafes[choice].src + ')';
 }
