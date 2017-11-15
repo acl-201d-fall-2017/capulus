@@ -98,8 +98,9 @@ if (document.getElementById('search') != null) {
         const cafeBlock = document.createElement('div');
         cafeBlock.setAttribute('class', 'cafeBlock');
         cafeBlock.style.backgroundImage = 'url(' + cafes[i].src + ')';
-        const cafeName = document.createElement('h2');
+        const cafeName = document.createElement('a');
         cafeName.textContent = cafes[i].name;
+        cafeName.setAttribute('href', 'profile.html?id=' + i );
         const cafeRating = document.createElement('span');
         cafeRating.textContent = cafes[i].overall;
         searchPage.appendChild(cafeBlock);
@@ -108,6 +109,33 @@ if (document.getElementById('search') != null) {
     }
 }
 
+// take form input, return to user
+if (document.getElementById('suggest-form') != null) {
+    const suggestForm = document.getElementById('suggest-form');
+    //add click handler for the suggestForm
+    suggestForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const suggestName = document.getElementById('suggest-cafe-name').value;
+        localStorage.setItem('suggestName', JSON.stringify(suggestName));
+        const suggestAddress = document.getElementById('suggest-cafe-address').value;
+        localStorage.setItem('suggestAddress', JSON.stringify(suggestAddress));
+        const suggestSite = document.getElementById('suggest-cafe-site').value;
+        localStorage.setItem('suggestSite', JSON.stringify(suggestSite));
+        const suggestion = document.getElementById('suggestion-return');
+        const suggestList = document.createElement('ul');
+        const listItemName = document.createElement('li');
+        listItemName.textContent = suggestName;
+        const listItemAddress = document.createElement('li');
+        listItemAddress.textContent = suggestAddress;
+        const listItemSite = document.createElement('li');
+        listItemSite.textContent = suggestSite;
+        suggestList.appendChild(listItemName);
+        suggestList.appendChild(listItemAddress);
+        suggestList.appendChild(listItemSite);
+        suggestion.appendChild(suggestList);
+        //Need to move the rendering out of click handler, constants called w/in handler not scoped to outside. Fix this. Eventually. Stretch goal. 
+    });
+}
 
 
 
