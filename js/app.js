@@ -158,8 +158,32 @@ if (document.getElementById('profile') != null) {
         spaceCups.appendChild(cupIcon);
     }
 
+    const outletsTitle = document.createElement('h4');
+    outletsTitle.textContent = 'Outlets';
+    const outletsCups = document.createElement('div');
+    outletsCups.setAttribute('class', 'cups');
+    for(let i = cafes[choice].outlets; i > 0; i--){
+        const cupIcon = document.createElement('img');
+        cupIcon.src = 'assets/icons/cup-icon.png';
+        outletsCups.appendChild(cupIcon);
+    }
+
+    const atmosphereTitle = document.createElement('h4');
+    atmosphereTitle.textContent = 'Atmosphere';
+    const atmosphereCups = document.createElement('div');
+    atmosphereCups.setAttribute('class', 'cups');
+    for(let i = cafes[choice].atmosphere; i > 0; i--){
+        const cupIcon = document.createElement('img');
+        cupIcon.src = 'assets/icons/cup-icon.png';
+        atmosphereCups.appendChild(cupIcon);
+    }
+
     workRatings.appendChild(spaceTitle);
     workRatings.appendChild(spaceCups);
+    workRatings.appendChild(outletsTitle);
+    workRatings.appendChild(outletsCups);
+    workRatings.appendChild(atmosphereTitle);
+    workRatings.appendChild(atmosphereCups);
     workSection.appendChild(workRatings);
 
 }
