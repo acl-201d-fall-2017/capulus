@@ -2,8 +2,13 @@
 
 const categories = ['work', 'menu', 'comm'];
 
+const subcats = [];
+subcats[0] = ['Space', 'Outlets', 'Atmosphere'];
+subcats[1] = ['Quality', 'Variety', 'Price'];
+subcats[2] = ['Kid Friendliness', 'Location', 'Neighborhood'];
+
 if (document.getElementById('profile') != null) {
-    
+
     //renders hero header with name, address, overall rating
     JSON.parse(localStorage.cafes);
     const choice = JSON.parse(localStorage.id);
@@ -37,27 +42,28 @@ if (document.getElementById('profile') != null) {
         categoryWrapper.appendChild(categoryIcon);
         categoryWrapper.appendChild(categoryScore);
         categorySection.appendChild(categoryWrapper);
-
         const categoryRatings = document.createElement('div');
         categoryRatings.setAttribute('class', categories[i] + '-ratings');
+        categorySection.appendChild(categoryRatings);
+
         // title sub-cats and create cup section
-        for (let j = 0; j < scores.length; j++){
+
+        for (let j = 0; j < subcats.length; j++){
             const scoresTitle = document.createElement('h4');
-            scoresTitle.textContent = scores[i][j];
+            scoresTitle.textContent = subcats[i][j];
+            categoryRatings.appendChild(scoresTitle);
             const scoresCups = document.createElement('div');
             scoresCups.setAttribute('class', 'cups');
-
+            categoryRatings.appendChild(scoresCups);
+        }
             // add cup icons for sub-categories
-            for(let k = cafes[choice].scores[k][j]; k > 0; k--){
-                const cupIcon = document.createElement('img');
-                cupIcon.src = 'assets/icons/cup-icon.png';
-                scoresCups.appendChild(cupIcon);
-                //append title and icon sections to ratings area
-                categoryRatings.appendChild(scoresTitle);
-                categoryRatings.appendChild(scoresCups);
-            }
+        for(let i = cafes[choice].scores[i][j]; i > 0; i--){
+            const cupIcon = document.createElement('img');
+            cupIcon.src = 'assets/icons/cup-icon.png';
+            scoresCups.appendChild(cupIcon);
+        }
         }
     }
-
 }
+
 
