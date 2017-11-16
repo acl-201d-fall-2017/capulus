@@ -53,34 +53,13 @@ if (document.getElementById('profile') != null) {
             scoresTitle.textContent = subcats[i][j];
             const scoresCups = document.createElement('div');
             scoresCups.setAttribute('class', 'cups');
-            categoryRatings.appendChild(scoresTitle);
-            for (let i = 0; scores[j][i] > 0; i++){
+            for(let n = scores[i][j]; n > 0; n--){
                 const cupIcon = document.createElement('img');
                 cupIcon.src = 'assets/icons/cup-icon.png';
                 scoresCups.appendChild(cupIcon);
             }
+            categoryRatings.appendChild(scoresTitle);
             categoryRatings.appendChild(scoresCups);
         }
     }
 }
-
-// // add cup icons for sub-categories
-// while (cafes[choice].scores[i] > 0){
-//     const cupIcon = document.createElement('img');
-//     cupIcon.src = 'assets/icons/cup-icon.png';
-//     scoresCups.appendChild(cupIcon);
-// }
-// for (let i = 0; cafes[choice].scores[i][j] > 0; i--){
-//     const cupIcon = document.createElement('img');
-//     cupIcon.src = 'assets/icons/cup-icon.png';
-//     scoresCups.appendChild(cupIcon);
-// }
-
-// for(let i = cafes[choice].scores[i]; i > 0; i--){
-//     const cupIcon = document.createElement('img');
-//     cupIcon.src = 'assets/icons/cup-icon.png';
-//     scoresCups.appendChild(cupIcon);
-// }
-
-
-
