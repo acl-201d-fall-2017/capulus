@@ -84,7 +84,7 @@ Index/landing Page settings
 }
 
 /* May need to take this out or add specificiity for bannered pages */
-header {
+#index header {
     text-align: center;
 }
 
@@ -116,6 +116,11 @@ legend {
 }
 
 
+/* ////////////////////////
+
+About Page settings
+
+/////////////////////// */
 
 
 

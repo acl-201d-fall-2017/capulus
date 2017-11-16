@@ -91,7 +91,6 @@ function setGreeting() {
 }
 
 setGreeting();
-=======
 cafes.push(barista);
 
 if (document.getElementById('index') != null) {
@@ -352,3 +351,4 @@ if (document.getElementById('suggest-form') != null) {
         suggestion.appendChild(suggestList);
         //Need to move the rendering out of click handler, constants called w/in handler not scoped to outside. Fix this. Eventually. Stretch goal.
     });
+}
