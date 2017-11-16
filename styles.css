@@ -1,5 +1,132 @@
-.cafeBlock {
-    display: block;
-    width: 100%;
-    height: 200px;
+/* 
+
+COLORS
+
+Blue: 
+Hex: #01384c
+rgba: rgba(1,56,76,1)
+
+Brown: 
+Hex: #4c3726
+rgba: rgba(76,55,38,1)
+
+Green: 
+Hex: #0d4f1f
+rgba: rgba(13,79,31,1)
+
+*/
+
+
+/* ////////////////////////
+
+Globel Settings
+
+/////////////////////// */
+
+* {
+    outline: none;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 65px;
+}
+
+h3 {
+    font-size: 35px;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    background-color: rgba(255,255,255,.8);
+    border: none;
+    border-bottom: solid 5px rgba(13,79,31,1);
+    padding: 12px;
+    width: 250px;
+}
+
+button {
+    background-color: #fff;
+    padding: 12px;
+    color: #000;
+    border: none;
+    border-bottom: solid 5px rgba(13,79,31,1);
+}
+
+
+
+/* ////////////////////////
+
+Index/landing Page settings
+
+/////////////////////// */
+
+
+
+#index {
+    padding: 80px;
+    background-image: url(assets/images/main_cafe_background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+/* May need to take this out or add specificiity for bannered pages */
+header {
+    text-align: center;
+}
+
+#landing-form {
+    margin: 30px auto;
+    padding: 60px 20px;
+    width: 400px;
+    background-color: rgba(255,255,255,.7);
+}
+
+legend {
+    color: rgba(13,79,31,1);
+    font-size: 45px;
+    text-align: center;
+}
+
+#landing-form fieldset {
+    margin: 50px 0;
+    border: none;
+    text-align: center;
+}
+
+#suggest-link {
+    text-align: center;
+}
+
+#suggest-link a {
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    text-align: center;
 }
