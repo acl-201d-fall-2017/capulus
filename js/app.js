@@ -136,7 +136,7 @@ if (document.getElementById('profile') != null) {
     cafeAddress.textContent = cafes[choice].address;
     cafeInfo.appendChild(cafeAddress);
 
-    //this renders the work icon and overall work score
+    //************************** Work ****************************/
     const workSection = document.getElementById('work-section');
     const workWrapper = document.createElement('div');
     workWrapper.setAttribute('class', 'work-wrapper');
@@ -193,7 +193,7 @@ if (document.getElementById('profile') != null) {
     workRatings.appendChild(atmosphereCups);
     workSection.appendChild(workRatings);
 
-//************************** Menu ****************************/
+    //************************** Menu ****************************/
     const menuSection = document.getElementById('menu-section');
     const menuWrapper = document.createElement('div');
     menuWrapper.setAttribute('class', 'menu-wrapper');
@@ -306,12 +306,7 @@ if (document.getElementById('profile') != null) {
     commRatings.appendChild(neighborhoodTitle);
     commRatings.appendChild(neighborhoodCups);
     commSection.appendChild(commRatings);
-
-
 }
-
-
-
 
 // take form input, return to user
 if (document.getElementById('suggest-form') != null) {
@@ -340,10 +335,3 @@ if (document.getElementById('suggest-form') != null) {
         //Need to move the rendering out of click handler, constants called w/in handler not scoped to outside. Fix this. Eventually. Stretch goal.
     });
 }
-
-
-
-
-
-
-
