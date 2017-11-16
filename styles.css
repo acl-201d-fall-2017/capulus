@@ -110,6 +110,8 @@ header h3 {
     background-image: url(assets/images/main_cafe_background.jpg);
     background-size: cover;
     background-position: center center;
+    margin-bottom: 120px;
+
 }
 
 .header-inner {
@@ -294,14 +296,26 @@ About Page settings
 
 /////////////////////// */
 
+#bio-wrapper {
+    display:flex;
+    text-align:center;
 
+}
 
+.bio {
+    padding:30px;
+    
+}
 
+.biopic {
+    width: 150px;
+    height: 120px;
+    margin-bottom: 30px;
+}
 
-
-
-
-
+.bio p {
+    padding: 0 45px;
+}
 
 
 footer {
