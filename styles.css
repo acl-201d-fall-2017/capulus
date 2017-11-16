@@ -31,6 +31,7 @@ Globel Settings
 body {
     margin: 0;
     font-family: sans-serif;
+    background: rgba(1,56,76,1);
 }
 
 h1, h2, h3, h4 {
@@ -49,13 +50,28 @@ a {
     text-decoration: none;
 }
 
+/* Globel form settings */
 input {
     background-color: rgba(255,255,255,.8);
     border: none;
     border-bottom: solid 5px rgba(13,79,31,1);
+    margin: 10px 0;
     padding: 12px;
     width: 250px;
 }
+
+label {
+    display: block;
+    color: #01384c;
+}
+
+legend {
+    color: rgba(13,79,31,1);
+    font-size: 45px;
+    text-align: center;
+}
+
+
 
 button {
     background-color: #fff;
@@ -65,17 +81,60 @@ button {
     border-bottom: solid 5px rgba(13,79,31,1);
 }
 
+header {
+    position: relative;
+    padding: 5px 0;
+    height: 350px;
+    background-image: url(assets/images/main_cafe_background.jpg);
+    background-size: cover;
+    background-position: left top;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: 10px 0;
+    top: 0;
+    background: rgba(255,255,255,.75);
+    border-bottom: solid 5px rgba(13,79,31,1);
+}
+
+.header-inner img {
+    margin-left: 40px;
+    width: 60px;
+}
+
+nav {
+    list-style: none;
+    margin-right: 40px;
+}
+
+ul li {
+    display: inline-block;
+    padding-left: 3rem;
+}
+
+li a {
+    color: #01384c;
+}
+
+
+
 
 
 /* ////////////////////////
 
-Index/landing Page settings
+Index/landing and Suggest Page settings
 
 /////////////////////// */
 
 
 
-#index {
+#index,
+#suggest {
     padding: 80px;
     background-image: url(assets/images/main_cafe_background.jpg);
     background-attachment: fixed;
@@ -84,26 +143,39 @@ Index/landing Page settings
     color: #fff;
 }
 
-/* May need to take this out or add specificiity for bannered pages */
-#index header {
+#index header,
+#suggest header {
     text-align: center;
+    background: none;
+    height: 200px;
 }
 
 #landing-form {
     margin: 30px auto;
     padding: 60px 20px;
-    width: 400px;
+    width: 600px;
     background-color: rgba(255,255,255,.7);
 }
 
-legend {
-    color: rgba(13,79,31,1);
-    font-size: 45px;
-    text-align: center;
+#suggest-form {
+    margin: 30px auto;
+    padding: 60px 20px;
+    width: 600px;
+    background-color: rgba(255,255,255,.7);
 }
 
-#landing-form fieldset {
-    margin: 50px 0;
+#cafe-name-wrapper,
+#cafe-address-wrapper,
+#cafe-site-wrapper {
+    margin: 0 auto;
+    width: 50%;
+    font-weight: bold;
+    text-align: left;
+}
+
+#landing-form fieldset,
+#suggest-form fieldset {
+    margin: 40px auto;
     border: none;
     text-align: center;
 }
@@ -135,10 +207,4 @@ About Page settings
 
 footer {
     text-align: center;
-
-.cafeBlock {
-    display: block;
-    width: 100%;
-    height: 200px;
-
 }
