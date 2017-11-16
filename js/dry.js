@@ -1,6 +1,7 @@
 'use strict';
 
 const categories = ['work', 'menu', 'comm'];
+const scores = [];
 
 const subcats = [];
 subcats[0] = ['Space', 'Outlets', 'Atmosphere'];
@@ -25,7 +26,6 @@ if (document.getElementById('profile') != null) {
     cafeAddress.textContent = cafes[choice].address;
     cafeInfo.appendChild(cafeAddress);
 
-    const scores = [];
     scores[0] = [cafes[choice].space, cafes[choice].outlets, cafes[choice].atmosphere, cafes[choice].work];
     scores[1] = [cafes[choice].quality, cafes[choice].variety, cafes[choice].price, cafes[choice].menu];
     scores[2] = [cafes[choice].kids, cafes[choice].local, cafes[choice].neighborhood, cafes[choice].comm];
@@ -51,19 +51,36 @@ if (document.getElementById('profile') != null) {
         for (let j = 0; j < subcats.length; j++){
             const scoresTitle = document.createElement('h4');
             scoresTitle.textContent = subcats[i][j];
-            categoryRatings.appendChild(scoresTitle);
             const scoresCups = document.createElement('div');
             scoresCups.setAttribute('class', 'cups');
+            categoryRatings.appendChild(scoresTitle);
+            for (let i = 0; scores[j][i] > 0; i++){
+                const cupIcon = document.createElement('img');
+                cupIcon.src = 'assets/icons/cup-icon.png';
+                scoresCups.appendChild(cupIcon);
+            }
             categoryRatings.appendChild(scoresCups);
-        }
-            // add cup icons for sub-categories
-        for(let i = cafes[choice].scores[i][j]; i > 0; i--){
-            const cupIcon = document.createElement('img');
-            cupIcon.src = 'assets/icons/cup-icon.png';
-            scoresCups.appendChild(cupIcon);
-        }
         }
     }
 }
+
+// // add cup icons for sub-categories
+// while (cafes[choice].scores[i] > 0){
+//     const cupIcon = document.createElement('img');
+//     cupIcon.src = 'assets/icons/cup-icon.png';
+//     scoresCups.appendChild(cupIcon);
+// }
+// for (let i = 0; cafes[choice].scores[i][j] > 0; i--){
+//     const cupIcon = document.createElement('img');
+//     cupIcon.src = 'assets/icons/cup-icon.png';
+//     scoresCups.appendChild(cupIcon);
+// }
+
+// for(let i = cafes[choice].scores[i]; i > 0; i--){
+//     const cupIcon = document.createElement('img');
+//     cupIcon.src = 'assets/icons/cup-icon.png';
+//     scoresCups.appendChild(cupIcon);
+// }
+
 
 
