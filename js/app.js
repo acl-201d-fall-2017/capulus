@@ -74,23 +74,6 @@ barista.rateWork (2, 2, 3);
 barista.rateMenu (2, 2, 4);
 barista.rateComm (1, 3, 3);
 barista.rateOverall();
-
-
-
-
-if(window.localStorage) {
-    localStorage.setItem('username', document.getElementById('username').value);
-}
-
-let theName = "";
-function setGreeting() {
-    if (window.localStorage && localStorage.username) {
-        theName = localStorage.getItem('username');
-        document.getElementById("greeting").textContent = "did this work?" + theName;
-    }
-}
-
-setGreeting();
 cafes.push(barista);
 
 if (document.getElementById('index') != null) {
