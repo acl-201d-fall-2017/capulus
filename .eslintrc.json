@@ -3,6 +3,13 @@
       "browser": true,
       "es6": true
     },
+
+    "globals": {
+      "Cafe": false,
+      "cafes": false,
+      "scores": false
+    },
+
     //  To learn more about the rules: https://eslint.org/docs/rules/
     "rules": {
       "semi": ["error", "always"],
