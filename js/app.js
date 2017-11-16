@@ -117,7 +117,10 @@ if (document.getElementById('search') != null) {
         });
     }
 }
+
+// profile page rendering
 if (document.getElementById('profile') != null) {
+    //renders hero header with name, address, overall rating
     JSON.parse(localStorage.cafes);
     const choice = JSON.parse(localStorage.id);
     const hero = document.getElementById('hero-lg');
@@ -133,7 +136,7 @@ if (document.getElementById('profile') != null) {
     cafeAddress.textContent = cafes[choice].address;
     cafeInfo.appendChild(cafeAddress);
 
-    //this renders the work icon and overall score
+    //this renders the work icon and overall work score
     const workSection = document.getElementById('work-section');
     const workWrapper = document.createElement('div');
     workWrapper.setAttribute('class', 'work-wrapper');
@@ -147,17 +150,19 @@ if (document.getElementById('profile') != null) {
 
     const workRatings = document.createElement('div');
     workRatings.setAttribute('class','work-ratings');
+
+    // title and icons for work/space
     const spaceTitle = document.createElement('h4');
     spaceTitle.textContent = 'Space';
     const spaceCups = document.createElement('div');
     spaceCups.setAttribute('class', 'cups');
-
     for(let i = cafes[choice].space; i > 0; i--){
         const cupIcon = document.createElement('img');
         cupIcon.src = 'assets/icons/cup-icon.png';
         spaceCups.appendChild(cupIcon);
     }
 
+    // title and icons for work/outlets
     const outletsTitle = document.createElement('h4');
     outletsTitle.textContent = 'Outlets';
     const outletsCups = document.createElement('div');
@@ -168,6 +173,7 @@ if (document.getElementById('profile') != null) {
         outletsCups.appendChild(cupIcon);
     }
 
+    // title and icons for work/atmosphere
     const atmosphereTitle = document.createElement('h4');
     atmosphereTitle.textContent = 'Atmosphere';
     const atmosphereCups = document.createElement('div');
@@ -178,6 +184,7 @@ if (document.getElementById('profile') != null) {
         atmosphereCups.appendChild(cupIcon);
     }
 
+    //append title and icon sections to ratings area
     workRatings.appendChild(spaceTitle);
     workRatings.appendChild(spaceCups);
     workRatings.appendChild(outletsTitle);
@@ -185,6 +192,121 @@ if (document.getElementById('profile') != null) {
     workRatings.appendChild(atmosphereTitle);
     workRatings.appendChild(atmosphereCups);
     workSection.appendChild(workRatings);
+
+//************************** Menu ****************************/
+    const menuSection = document.getElementById('menu-section');
+    const menuWrapper = document.createElement('div');
+    menuWrapper.setAttribute('class', 'menu-wrapper');
+    const menuIcon = document.createElement('img');
+    menuIcon.src = 'assets/icons/menu-icon.png';
+    const menuScore = document.createElement('span');
+    menuScore.textContent = cafes[choice].menu;
+    menuWrapper.appendChild(menuIcon);
+    menuWrapper.appendChild(menuScore);
+    menuSection.appendChild(menuWrapper);
+
+    const menuRatings = document.createElement('div');
+    menuRatings.setAttribute('class','menu-ratings');
+
+    // title and icons for menu/quality
+    const qualityTitle = document.createElement('h4');
+    qualityTitle.textContent = 'Quality';
+    const qualityCups = document.createElement('div');
+    qualityCups.setAttribute('class', 'cups');
+    for(let i = cafes[choice].quality; i > 0; i--){
+        const cupIcon = document.createElement('img');
+        cupIcon.src = 'assets/icons/cup-icon.png';
+        qualityCups.appendChild(cupIcon);
+    }
+
+    // title and icons for work/variety
+    const varietyTitle = document.createElement('h4');
+    varietyTitle.textContent = 'Variety';
+    const varietyCups = document.createElement('div');
+    varietyCups.setAttribute('class', 'cups');
+    for(let i = cafes[choice].variety; i > 0; i--){
+        const cupIcon = document.createElement('img');
+        cupIcon.src = 'assets/icons/cup-icon.png';
+        varietyCups.appendChild(cupIcon);
+    }
+
+    // title and icons for work/price
+    const priceTitle = document.createElement('h4');
+    priceTitle.textContent = 'Price';
+    const priceCups = document.createElement('div');
+    priceCups.setAttribute('class', 'cups');
+    for(let i = cafes[choice].price; i > 0; i--){
+        const cupIcon = document.createElement('img');
+        cupIcon.src = 'assets/icons/cup-icon.png';
+        priceCups.appendChild(cupIcon);
+    }
+
+    //append title and icon sections to ratings area
+    menuRatings.appendChild(qualityTitle);
+    menuRatings.appendChild(qualityCups);
+    menuRatings.appendChild(varietyTitle);
+    menuRatings.appendChild(varietyCups);
+    menuRatings.appendChild(priceTitle);
+    menuRatings.appendChild(priceCups);
+    menuSection.appendChild(menuRatings);
+
+    /******************************Community**************************/
+    const commSection = document.getElementById('comm-section');
+    const commWrapper = document.createElement('div');
+    commWrapper.setAttribute('class', 'comm-wrapper');
+    const commIcon = document.createElement('img');
+    commIcon.src = 'assets/icons/comm-icon.png';
+    const commScore = document.createElement('span');
+    commScore.textContent = cafes[choice].comm;
+    commWrapper.appendChild(commIcon);
+    commWrapper.appendChild(commScore);
+    commSection.appendChild(commWrapper);
+
+    const commRatings = document.createElement('div');
+    commRatings.setAttribute('class','comm-ratings');
+
+    // title and icons for comm/kids
+    const kidsTitle = document.createElement('h4');
+    kidsTitle.textContent = 'Kid-friendliness';
+    const kidsCups = document.createElement('div');
+    kidsCups.setAttribute('class', 'cups');
+    for(let i = cafes[choice].kids; i > 0; i--){
+        const cupIcon = document.createElement('img');
+        cupIcon.src = 'assets/icons/cup-icon.png';
+        kidsCups.appendChild(cupIcon);
+    }
+
+    // title and icons for comm/local
+    const localTitle = document.createElement('h4');
+    localTitle.textContent = 'Local Business';
+    const localCups = document.createElement('div');
+    localCups.setAttribute('class', 'cups');
+    for(let i = cafes[choice].local; i > 0; i--){
+        const cupIcon = document.createElement('img');
+        cupIcon.src = 'assets/icons/cup-icon.png';
+        localCups.appendChild(cupIcon);
+    }
+
+    // title and icons for comm/neighborhood
+    const neighborhoodTitle = document.createElement('h4');
+    neighborhoodTitle.textContent = 'neighborhood';
+    const neighborhoodCups = document.createElement('div');
+    neighborhoodCups.setAttribute('class', 'cups');
+    for(let i = cafes[choice].neighborhood; i > 0; i--){
+        const cupIcon = document.createElement('img');
+        cupIcon.src = 'assets/icons/cup-icon.png';
+        neighborhoodCups.appendChild(cupIcon);
+    }
+
+    //append title and icon sections to ratings area
+    commRatings.appendChild(kidsTitle);
+    commRatings.appendChild(kidsCups);
+    commRatings.appendChild(localTitle);
+    commRatings.appendChild(localCups);
+    commRatings.appendChild(neighborhoodTitle);
+    commRatings.appendChild(neighborhoodCups);
+    commSection.appendChild(commRatings);
+
 
 }
 
@@ -224,12 +346,4 @@ if (document.getElementById('suggest-form') != null) {
 
 
 
-// This will render the cafe items to the search page
 
-// create div for thumbnail
-// add attribute class
-// set att value 'class name'
-
-// create div for h1 overall rating
-// add attribute for id
-// att text content === overall
