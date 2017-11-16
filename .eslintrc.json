@@ -7,7 +7,21 @@
     "globals": {
       "Cafe": false,
       "cafes": false,
-      "scores": false
+      "scores": false,
+      "work": false,
+      "space": false, 
+      "outlets": false, 
+      "atmosphere": false, 
+      "menu": false,
+      "quality": false,
+      "variety": false, 
+      "price": false,
+      "comm": false,
+      "kids": false,
+      "local": false,
+      "neighborhood": false,
+      "categories": false,
+      "choice": false 
     },
 
     //  To learn more about the rules: https://eslint.org/docs/rules/
