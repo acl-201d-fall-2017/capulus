@@ -24,6 +24,7 @@
       "choice": false, 
       "suggestion": false,
       "NewCafe": false,
+      "newCafes": false,
       "suggestList": false
     },
 
