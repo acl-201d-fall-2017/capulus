@@ -31,19 +31,26 @@ Globel Settings
 body {
     margin: 0;
     font-family: sans-serif;
-    background: #094f68;
+    background: rgba(1,56,76,.05);
 }
 
 h1, h2, h3, h4 {
     margin: 0;
+    font-family: 'Lancelot', cursive;
 }
 
 h1 {
-    font-size: 65px;
+    font-size: 85px;
+    font-weight: regular;
+}
+
+h2{
+    font-size: 50px;
 }
 
 h3 {
     font-size: 35px;
+    color: white;
 }
 
 a {
@@ -83,35 +90,24 @@ button {
 
 header {
     position: relative;
-    height: 350px;
+    padding: 100px 0;
 }
 
 header img {
-    position: absolute;
     width: 100px;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
     background: rgba(1,56,76,1);
+    border-radius: 20px;
     padding: 10px;
-    z-index: 2;
-}
-
-header h3 {
-    position: absolute;
-    padding-top: 20px;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
     z-index: 2;
 }
 
 .hero-lg {
     background-image: url(assets/images/main_cafe_background.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     margin-bottom: 120px;
-
+    text-align: center;
 }
 
 .header-inner {
@@ -213,11 +209,16 @@ Index/landing and Suggest Page settings
 }
 
 #suggest-link {
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    margin: 0 auto;
     text-align: center;
+    border: solid 2px black;
 }
 
 #suggest-link a {
-    color: #fff;
+    color: #000;
 }
 
 
@@ -233,7 +234,7 @@ Search Page settings
 #greeting {
     padding: 50px 0;
     text-align: center;
-    font-size: 35px;
+    font-size: 85px;
 }
 
 
@@ -258,6 +259,7 @@ Search Page settings
     background-size: cover;
     text-align: center;
     border-radius: 20px;
+    transition: box-shadow .3s ease-in-out;
 }
 
 .cafeBlock a,
@@ -265,12 +267,12 @@ Search Page settings
     display: block;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 80%;
     margin: 0 auto;
-    font-size: 35px;
+    font-size: 45px;
+    font-family: Roboto, sans-serif;
     color: #fff;
     z-index: 100;
-    transition: all .5s ease-in;
 }
 
 .cafeBlock:after {
@@ -287,7 +289,7 @@ Search Page settings
 
 
 .cafeBlock:hover {
-    box-shadow: 2px 2px 10px 4px rgba(0,0,0,.5);
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,.6);
 }
 
 
@@ -303,12 +305,10 @@ About Page settings
 #bio-wrapper {
     display:flex;
     text-align:center;
-
 }
 
 .bio {
     padding:30px;
-    
 }
 
 .biopic {
@@ -318,7 +318,11 @@ About Page settings
 }
 
 .bio p {
-    padding: 0 45px;
+    padding: 0 35px;
+    font-size: 110%;
+    line-height: 1.5em;
+    font-weight: regular;
+    font-family: Roboto, sans-serif;
 }
 
 
@@ -327,6 +331,26 @@ About Page settings
 Profile Page settings
 
 /////////////////////// */
+
+#hero-profile {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin-bottom: 100px;
+}
+
+#hero-cafe-info {
+    display: block;
+    text-align: center;
+    padding: 50px;
+    color: white;
+}
+
+#hero-cafe-info span {
+    font-size: 60px;
+}
+
 
 #work-section,
 #menu-section,
@@ -337,7 +361,10 @@ Profile Page settings
     align-items: center;
     padding: 40px;
     border: solid 2px black;
+    border-radius: 20px;
     background: #043a4d;
+    color: #8a8a8a;
+    text-shadow: 1px 1px 3px black;
 }
 
 .work-ratings,
@@ -351,11 +378,13 @@ Profile Page settings
     display: flex;
     align-items: center;
     padding-left: 30px;
+    font-size: 25px;
 }
 
 .score-bar h4 {
-    width: 125px;
+    width: 200px;
     padding: 0 20px;
+    font-family: Roboto, sans-serif;
 }
 
 .cups img {
@@ -389,5 +418,6 @@ Profile Page settings
 
 
 footer {
+    margin-top: 100px;
     text-align: center;
 }

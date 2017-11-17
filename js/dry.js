@@ -13,7 +13,7 @@ if (document.getElementById('profile') != null) {
     //renders hero header with name, address, overall rating
     JSON.parse(localStorage.cafes);
     const choice = JSON.parse(localStorage.id);
-    const hero = document.getElementById('hero-lg');
+    const hero = document.getElementById('hero-profile');
     hero.style.backgroundImage = 'url(' + cafes[choice].src + ')';
     const cafeInfo = document.getElementById('hero-cafe-info');
     const cafeTitle = document.createElement('h1');
