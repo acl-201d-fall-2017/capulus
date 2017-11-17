@@ -22,7 +22,9 @@
       "neighborhood": false,
       "categories": false,
       "choice": false, 
-      "suggestion": false
+      "suggestion": false,
+      "NewCafe": false,
+      "suggestList": false
     },
 
     //  To learn more about the rules: https://eslint.org/docs/rules/

@@ -87,16 +87,6 @@ if (document.getElementById('search') != null) {
     }
 }
 
-class NewCafe {
-    constructor(suggestName, suggestAddress, suggestSite) {
-        this.suggestName = suggestName;
-        this.suggestAddress = suggestAddress;
-        this.suggestSite = suggestSite;
-    }
-}
-
-// const 'newCafes' = [];
-
 // take form input, return to user
 if (document.getElementById('suggest-form') != null) {
     // loop to render all previously suggested cafes
@@ -127,7 +117,19 @@ if (document.getElementById('suggest-form') != null) {
         const formCafe = new NewCafe (suggestName, suggestAddress, suggestSite);
         parsedCafes.push(formCafe);
         localStorage.setItem('newCafes', JSON.stringify(parsedCafes));
+        // render newly suggested cafe to page
+        const suggestion = document.getElementById('suggestion-return');
+        const suggestList = document.createElement('ul');
+        const listItemName = document.createElement('li');
+        listItemName.textContent = suggestName;
+        const listItemAddress = document.createElement('li');
+        listItemAddress.textContent = suggestAddress;
+        const listItemSite = document.createElement('li');
+        listItemSite.textContent = suggestSite;
+        suggestList.appendChild(listItemName);
+        suggestList.appendChild(listItemAddress);
+        suggestList.appendChild(listItemSite);
+        suggestion.appendChild(suggestList);
+        
     });
 }
-
-// TODO create constructor for new cafes, save all new cafes to local storage, render to page upon opening, add a new suggestion to the class
