@@ -1,3 +1,4 @@
+//adds constructor for cafes which render to search and profile page
 class Cafe { //eslint-disable-line
     constructor (name, address, site, src) {
         this.name = name;
@@ -28,6 +29,7 @@ class Cafe { //eslint-disable-line
     }
 }
 
+//adds a constructor for suggested cafes which render to suggestion page
 class NewCafe { //eslint-disable-line
     constructor(suggestName, suggestAddress, suggestSite) {
         this.suggestName = suggestName;
