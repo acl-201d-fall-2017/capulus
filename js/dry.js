@@ -13,7 +13,7 @@ if (document.getElementById('profile') != null) {
     //renders hero header with name, address, overall rating
     JSON.parse(localStorage.cafes);
     const choice = JSON.parse(localStorage.id);
-    const hero = document.getElementById('hero-lg');
+    const hero = document.getElementById('hero-profile');
     hero.style.backgroundImage = 'url(' + cafes[choice].src + ')';
     const cafeInfo = document.getElementById('hero-cafe-info');
     const cafeTitle = document.createElement('h1');
@@ -34,7 +34,7 @@ if (document.getElementById('profile') != null) {
     for (let i = 0; i < categories.length; i++){
         const categorySection = document.getElementById(categories[i] + '-section');
         const categoryWrapper = document.createElement('div');
-        categoryWrapper.setAttribute('class', categories[i] + '-wrapper');
+        categoryWrapper.setAttribute('class', categories[i] + '-icon');
         const categoryIcon = document.createElement('img');
         categoryIcon.src = 'assets/icons/' + categories[i] + '-icon.png';
         const categoryScore = document.createElement('span');
@@ -49,6 +49,8 @@ if (document.getElementById('profile') != null) {
         // title sub-cats and create cup section
 
         for (let j = 0; j < subcats.length; j++){
+            const scoreBar = document.createElement('div');
+            scoreBar.setAttribute('class', 'score-bar');
             const scoresTitle = document.createElement('h4');
             scoresTitle.textContent = subcats[i][j];
             const scoresCups = document.createElement('div');
@@ -58,8 +60,9 @@ if (document.getElementById('profile') != null) {
                 cupIcon.src = 'assets/icons/cup-icon.png';
                 scoresCups.appendChild(cupIcon);
             }
-            categoryRatings.appendChild(scoresTitle);
-            categoryRatings.appendChild(scoresCups);
+            scoreBar.appendChild(scoresTitle);
+            scoreBar.appendChild(scoresCups);
+            categoryRatings.appendChild(scoreBar);
         }
     }
 }
