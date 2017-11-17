@@ -1,8 +1,8 @@
 'use strict';
 
+// sets up arrays to loop through various categories and sub-categories
 const categories = ['work', 'menu', 'comm'];
 const scores = [];
-
 const subcats = [];
 subcats[0] = ['Space', 'Outlets', 'Atmosphere'];
 subcats[1] = ['Quality', 'Variety', 'Price'];
@@ -26,6 +26,7 @@ if (document.getElementById('profile') != null) {
     cafeAddress.textContent = cafes[choice].address;
     cafeInfo.appendChild(cafeAddress);
 
+    // creates arrays of sub-category scores specific to the cafe chosen on search page
     scores[0] = [cafes[choice].space, cafes[choice].outlets, cafes[choice].atmosphere, cafes[choice].work];
     scores[1] = [cafes[choice].quality, cafes[choice].variety, cafes[choice].price, cafes[choice].menu];
     scores[2] = [cafes[choice].kids, cafes[choice].local, cafes[choice].neighborhood, cafes[choice].comm];
@@ -46,8 +47,7 @@ if (document.getElementById('profile') != null) {
         categoryRatings.setAttribute('class', categories[i] + '-ratings');
         categorySection.appendChild(categoryRatings);
 
-        // title sub-cats and create cup section
-
+        // titles sub-cats and create cup section
         for (let j = 0; j < subcats.length; j++){
             const scoreBar = document.createElement('div');
             scoreBar.setAttribute('class', 'score-bar');
@@ -55,11 +55,14 @@ if (document.getElementById('profile') != null) {
             scoresTitle.textContent = subcats[i][j];
             const scoresCups = document.createElement('div');
             scoresCups.setAttribute('class', 'cups');
+
+            // adds appropriate number of cup icons
             for(let n = scores[i][j]; n > 0; n--){
                 const cupIcon = document.createElement('img');
                 cupIcon.src = 'assets/icons/cup-icon.png';
                 scoresCups.appendChild(cupIcon);
             }
+
             scoreBar.appendChild(scoresTitle);
             scoreBar.appendChild(scoresCups);
             categoryRatings.appendChild(scoreBar);
