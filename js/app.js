@@ -2,6 +2,7 @@
 
 const cafes = [];
 
+// creates instances of cafes
 const starbucks = new Cafe ('Starbucks', '1039 NW Couch St', 'http://www.Starbucks.com', 'assets/images/starbucks.jpeg');
 starbucks.rateWork(4, 2, 3);
 starbucks.rateMenu(3, 2, 4);
@@ -16,14 +17,12 @@ pearl.rateComm(3, 5, 3);
 pearl.rateOverall();
 cafes.push(pearl);
 
-
 const albina = new Cafe ('Albina', '4637 N Albina Ave', 'https://www.facebook.com/pages/Albina-Press-Coffeehouse/152791121399765', 'assets/images/albina.jpeg');
 albina.rateWork (3, 3, 5);
 albina.rateMenu (4, 3, 3);
 albina.rateComm (1, 5, 5);
 albina.rateOverall();
 cafes.push(albina);
-
 
 const rohst = new Cafe ('Rohst', '11254 SE 21st Avenue', 'http://www.rohstcoffee.com', 'assets/images/rohst.jpeg');
 rohst.rateWork (2, 4, 4);
@@ -46,18 +45,17 @@ barista.rateComm (1, 3, 3);
 barista.rateOverall();
 cafes.push(barista);
 
-// Store username to local from landing page
+// Stores username to local from landing page
 if (document.getElementById('index') != null) {
     const landingForm = document.getElementById ('landing-form');
 
     landingForm.addEventListener('submit', function(){
         const user = document.getElementById('username').value;
         localStorage.setItem('username', JSON.stringify(user));
-        //'username' is the key, therefore must be used to access past this point
     });
 }
 
-//Render the username onto the search page
+// Renders the username onto the search page
 if (document.getElementById('search') != null) {
     console.log(localStorage.username);
     const newUser = JSON.parse(localStorage.username);
@@ -65,7 +63,7 @@ if (document.getElementById('search') != null) {
     greeting.textContent = 'Hello, ' + newUser + '. Find your space.';
 }
 
-//Render cafes on SEARCH page, save array of cafe instances to local
+//Renders cafes on SEARCH page, save array of cafe instances to local
 if (document.getElementById('search') != null) {
     for ( let i = 0; i < cafes.length; i++){
         const searchPage = document.getElementById('thumbnail-wrapper');
@@ -116,3 +114,52 @@ if (document.getElementById('suggest-form') != null) {
         //Need to move the rendering out of click handler, constants called w/in handler not scoped to outside. Fix this. Eventually. Stretch goal.
     });
 }
+
+// // take form input on SUGGEST page, return to user
+// if (document.getElementById('suggest-form') != null) {
+//     const suggestForm = document.getElementById('suggest-form');
+    
+//     //adds click handler for the suggestForm
+//     suggestForm.addEventListener('submit', function(e){
+//         e.preventDefault();
+//         console.log('heard a click');
+//         suggestName = document.getElementById('suggest-cafe-name').value;
+//         localStorage.setItem('suggestName', JSON.stringify(suggestName));
+//         storedNames.push('suggestName');
+//         suggestAddress = document.getElementById('suggest-cafe-address').value;
+//         localStorage.setItem('suggestAddress', JSON.stringify(suggestAddress));
+//         storedAddresses.push('suggestAddress');
+//         suggestSite = document.getElementById('suggest-cafe-site').value;
+//         localStorage.setItem('suggestSite', JSON.stringify(suggestSite));
+//         storedSites.push(localStorage.suggestSite);
+//     });
+    
+//     // render previous suggestions
+//     const suggestion = document.getElementById('suggestion-return');
+//     const storedNames = [];
+//     localStorage.setItem('storedNames', JSON.stringify(storedNames));
+//     const storedAddresses = [];
+//     localStorage.setItem('storedAddresses', JSON.stringify(storedAddresses));
+//     const storedSites = [];
+//     localStorage.setItem('storedSites', JSON.stringify(storedSites));
+
+//     // sets up block-scoped variables to store and access sugestions in for loop and click handler
+//     let suggestName;
+//     let suggestAddress;
+//     let suggestSite;
+
+//     // renders previously suggested cafes onto page
+//     for (let i = 0; i < storedNames.length; i++){
+//         const suggestList = document.createElement('ul');
+//         const listItemName = document.createElement('li');
+//         listItemName.textContent = JSON.parse(localStorage.storedNames[i]);
+//         const listItemAddress = document.createElement('li');
+//         listItemAddress.textContent = JSON.parse(localStorage.storedAddresses[i]);
+//         const listItemSite = document.createElement('li');
+//         listItemSite.textContent = JSON.parse(localStorage.storedSites[i]);
+//         suggestList.appendChild(listItemName);
+//         suggestList.appendChild(listItemAddress);
+//         suggestList.appendChild(listItemSite);
+//         suggestion.appendChild(suggestList);
+//     }
+// }
