@@ -21,7 +21,8 @@
       "local": false,
       "neighborhood": false,
       "categories": false,
-      "choice": false 
+      "choice": false, 
+      "suggestion": false
     },
 
     //  To learn more about the rules: https://eslint.org/docs/rules/

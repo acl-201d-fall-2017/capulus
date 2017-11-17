@@ -6,7 +6,7 @@ const scores = [];
 const subcats = [];
 subcats[0] = ['Space', 'Outlets', 'Atmosphere'];
 subcats[1] = ['Quality', 'Variety', 'Price'];
-subcats[2] = ['Kid Friendliness', 'Location', 'Neighborhood'];
+subcats[2] = ['Kid Friendly', 'Local', 'Neighborhood'];
 
 if (document.getElementById('profile') != null) {
 
