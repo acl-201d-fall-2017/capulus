@@ -65,6 +65,8 @@ input {
     margin: 10px 0;
     padding: 12px;
     width: 250px;
+    border-radius: 5px;
+    animation: 3s ease-in-out 1s infinite input-wiggle;
 }
 
 label {
@@ -86,6 +88,7 @@ button {
     color: #000;
     border: none;
     border-bottom: solid 5px rgba(13,79,31,1);
+    cursor: pointer;
 }
 
 header {
@@ -99,6 +102,7 @@ header img {
     border-radius: 20px;
     padding: 10px;
     z-index: 2;
+    animation: .8s linear logo-slide;
 }
 
 .hero-lg {
@@ -106,7 +110,7 @@ header img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    margin-bottom: 120px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -118,6 +122,7 @@ header img {
     width: 100%;
     padding: 10px 0;
     top: 0;
+    z-index: 100;
 }
 
 .header-inner img {
@@ -137,6 +142,10 @@ ul li {
 
 li a {
     color: #fff;
+}
+
+li:hover a {
+    color: rgba(108, 208, 245, 0.6);
 }
 
 
@@ -183,6 +192,7 @@ Index/landing and Suggest Page settings
     padding: 60px 20px;
     width: 600px;
     background-color: rgba(255,255,255,.7);
+    animation: .8s linear form-slide;
 }
 
 #suggest-form {
@@ -190,6 +200,7 @@ Index/landing and Suggest Page settings
     padding: 60px 20px;
     width: 600px;
     background-color: rgba(255,255,255,.7);
+    animation: .5s linear form-slide;
 }
 
 #cafe-name-wrapper,
@@ -246,7 +257,7 @@ Search Page settings
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 100px 40px;
+    padding: 40px 40px 100px 40px;
 }
 
 .cafeBlock {
@@ -261,6 +272,18 @@ Search Page settings
     text-align: center;
     border-radius: 20px;
     transition: box-shadow .3s ease-in-out;
+}
+
+.cafeBlock:nth-child(even) {
+    animation: .4s ease-in fade-in1;
+}
+
+.cafeBlock:nth-child(odd) {
+    animation: .8s ease-in fade-in2;
+}
+
+.cafeBlock:nth-child(3) {
+    animation: .6s ease-in fade-in1;
 }
 
 .cafeBlock a,
@@ -284,7 +307,7 @@ Search Page settings
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(1,56,76,.6);
+    background: rgba(76,55,38,.6);
     border-radius: 20px;
 }
 
@@ -333,6 +356,15 @@ Profile Page settings
 
 /////////////////////// */
 
+
+#profile .header-inner {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+#profile li a {
+    color: black;
+}
+
 #hero-profile {
     position: relative;
     display: block;
@@ -343,7 +375,7 @@ Profile Page settings
     margin-bottom: 100px;
 }
 
-/* #hero-profile:after {
+#hero-profile:after {
     display: block;
     position: absolute;
     content: '';
@@ -351,16 +383,18 @@ Profile Page settings
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(1,56,76,.6);
-} */
+    background: rgba(76,55,38,.6);
+    z-index: 0;
+}
 
 
 #hero-cafe-info {
+    position: relative;
     display: block;
     text-align: center;
     padding: 50px;
     color: white;
-    z-index: 100;
+    z-index: 1000;
 }
 
 #hero-cafe-info span {
@@ -372,10 +406,11 @@ Profile Page settings
 #menu-section,
 #comm-section {
     display: flex;
+    position: relative;
     width: 60%;
     margin: 30px auto;
     align-items: center;
-    padding: 40px;
+    padding: 3.5rem;
     border: solid 2px black;
     border-radius: 20px;
     background: #043a4d;
@@ -386,6 +421,10 @@ Profile Page settings
 #work-section h1,
 #menu-section h1,
 #comm-section h1 {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 20px;
     font-size: 40px;
 }
 
@@ -399,8 +438,13 @@ Profile Page settings
 .score-bar {
     display: flex;
     align-items: center;
-    padding-left: 30px;
+    padding: 15px 0 15px 30px;
     font-size: 25px;
+    border-bottom: solid 2px rgba(0,0,0,.1);
+}
+
+.score-bar:last-child {
+    border-bottom: none;
 }
 
 .score-bar h4 {
@@ -442,4 +486,106 @@ Profile Page settings
 footer {
     margin-top: 100px;
     text-align: center;
+}
+
+
+
+
+
+
+
+/* //////////////////////////
+
+ANIMATIONS
+
+//////////////////////// */
+
+/* FORM ANIMATIONS */
+@keyframes form-slide {
+    0% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes input-wiggle {
+    0% {
+        transform: rotate(1deg);
+    }
+
+    10% {
+        transform: rotate(-1deg);
+    }
+
+    12% {
+        transform: rotate(1deg);
+    }
+
+    22% {
+        transform: rotate(-1deg);
+    }
+
+    23% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+    }
+
+    100% {
+    }
+
+}
+
+
+@keyframes logo-slide {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* CODEBLOCK FADE IN */
+
+@keyframes fade-in1 {
+    0% {
+        opacity: 0;
+        transform: translateX(15px) translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes fade-in2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-15px) translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
 }
