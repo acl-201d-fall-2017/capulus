@@ -215,6 +215,7 @@ Index/landing and Suggest Page settings
     margin: 0 auto;
     text-align: center;
     border: solid 2px black;
+    background-color: rgba(255,255,255,.7);
 }
 
 #suggest-link a {
@@ -333,6 +334,8 @@ Profile Page settings
 /////////////////////// */
 
 #hero-profile {
+    position: relative;
+    display: block;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -340,11 +343,24 @@ Profile Page settings
     margin-bottom: 100px;
 }
 
+/* #hero-profile:after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(1,56,76,.6);
+} */
+
+
 #hero-cafe-info {
     display: block;
     text-align: center;
     padding: 50px;
     color: white;
+    z-index: 100;
 }
 
 #hero-cafe-info span {
@@ -365,6 +381,12 @@ Profile Page settings
     background: #043a4d;
     color: #8a8a8a;
     text-shadow: 1px 1px 3px black;
+}
+
+#work-section h1,
+#menu-section h1,
+#comm-section h1 {
+    font-size: 40px;
 }
 
 .work-ratings,
