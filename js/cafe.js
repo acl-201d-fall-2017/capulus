@@ -27,3 +27,11 @@ class Cafe { //eslint-disable-line
         this.overall = ((this.work + this.menu + this.comm ) / 3).toFixed(1);
     }
 }
+
+class NewCafe { //eslint-disable-line
+    constructor(suggestName, suggestAddress, suggestSite) {
+        this.suggestName = suggestName;
+        this.suggestAddress = suggestAddress;
+        this.suggestSite = suggestSite;
+    }
+}

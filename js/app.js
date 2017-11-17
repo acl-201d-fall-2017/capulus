@@ -89,16 +89,35 @@ if (document.getElementById('search') != null) {
 
 // take form input, return to user
 if (document.getElementById('suggest-form') != null) {
+    // loop to render all previously suggested cafes
+    const parsedCafes = JSON.parse(localStorage.newCafes);
+    for (let i = 0; i < parsedCafes.length; i++){
+        const suggestion = document.getElementById('suggestion-return');
+        const suggestList = document.createElement('ul');
+        const listItemName = document.createElement('li');
+        listItemName.textContent = parsedCafes[i].suggestName;
+        const listItemAddress = document.createElement('li');
+        listItemAddress.textContent = parsedCafes[i].suggestAddress;
+        const listItemSite = document.createElement('li');
+        listItemSite.textContent = parsedCafes[i].suggestSite;
+        suggestList.appendChild(listItemName);
+        suggestList.appendChild(listItemAddress);
+        suggestList.appendChild(listItemSite);
+        suggestion.appendChild(suggestList);
+    }
+
     const suggestForm = document.getElementById('suggest-form');
     //add click handler for the suggestForm
     suggestForm.addEventListener('submit', function(e){
         e.preventDefault();
+        const parsedCafes = JSON.parse(localStorage.newCafes);
         const suggestName = document.getElementById('suggest-cafe-name').value;
-        localStorage.setItem('suggestName', JSON.stringify(suggestName));
         const suggestAddress = document.getElementById('suggest-cafe-address').value;
-        localStorage.setItem('suggestAddress', JSON.stringify(suggestAddress));
         const suggestSite = document.getElementById('suggest-cafe-site').value;
-        localStorage.setItem('suggestSite', JSON.stringify(suggestSite));
+        const formCafe = new NewCafe (suggestName, suggestAddress, suggestSite);
+        parsedCafes.push(formCafe);
+        localStorage.setItem('newCafes', JSON.stringify(parsedCafes));
+        // render newly suggested cafe to page
         const suggestion = document.getElementById('suggestion-return');
         const suggestList = document.createElement('ul');
         const listItemName = document.createElement('li');
@@ -111,55 +130,6 @@ if (document.getElementById('suggest-form') != null) {
         suggestList.appendChild(listItemAddress);
         suggestList.appendChild(listItemSite);
         suggestion.appendChild(suggestList);
-        //Need to move the rendering out of click handler, constants called w/in handler not scoped to outside. Fix this. Eventually. Stretch goal.
+        
     });
 }
-
-// // take form input on SUGGEST page, return to user
-// if (document.getElementById('suggest-form') != null) {
-//     const suggestForm = document.getElementById('suggest-form');
-    
-//     //adds click handler for the suggestForm
-//     suggestForm.addEventListener('submit', function(e){
-//         e.preventDefault();
-//         console.log('heard a click');
-//         suggestName = document.getElementById('suggest-cafe-name').value;
-//         localStorage.setItem('suggestName', JSON.stringify(suggestName));
-//         storedNames.push('suggestName');
-//         suggestAddress = document.getElementById('suggest-cafe-address').value;
-//         localStorage.setItem('suggestAddress', JSON.stringify(suggestAddress));
-//         storedAddresses.push('suggestAddress');
-//         suggestSite = document.getElementById('suggest-cafe-site').value;
-//         localStorage.setItem('suggestSite', JSON.stringify(suggestSite));
-//         storedSites.push(localStorage.suggestSite);
-//     });
-    
-//     // render previous suggestions
-//     const suggestion = document.getElementById('suggestion-return');
-//     const storedNames = [];
-//     localStorage.setItem('storedNames', JSON.stringify(storedNames));
-//     const storedAddresses = [];
-//     localStorage.setItem('storedAddresses', JSON.stringify(storedAddresses));
-//     const storedSites = [];
-//     localStorage.setItem('storedSites', JSON.stringify(storedSites));
-
-//     // sets up block-scoped variables to store and access sugestions in for loop and click handler
-//     let suggestName;
-//     let suggestAddress;
-//     let suggestSite;
-
-//     // renders previously suggested cafes onto page
-//     for (let i = 0; i < storedNames.length; i++){
-//         const suggestList = document.createElement('ul');
-//         const listItemName = document.createElement('li');
-//         listItemName.textContent = JSON.parse(localStorage.storedNames[i]);
-//         const listItemAddress = document.createElement('li');
-//         listItemAddress.textContent = JSON.parse(localStorage.storedAddresses[i]);
-//         const listItemSite = document.createElement('li');
-//         listItemSite.textContent = JSON.parse(localStorage.storedSites[i]);
-//         suggestList.appendChild(listItemName);
-//         suggestList.appendChild(listItemAddress);
-//         suggestList.appendChild(listItemSite);
-//         suggestion.appendChild(suggestList);
-//     }
-// }
