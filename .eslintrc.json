@@ -3,6 +3,31 @@
       "browser": true,
       "es6": true
     },
+
+    "globals": {
+      "Cafe": false,
+      "cafes": false,
+      "scores": false,
+      "work": false,
+      "space": false, 
+      "outlets": false, 
+      "atmosphere": false, 
+      "menu": false,
+      "quality": false,
+      "variety": false, 
+      "price": false,
+      "comm": false,
+      "kids": false,
+      "local": false,
+      "neighborhood": false,
+      "categories": false,
+      "choice": false, 
+      "suggestion": false,
+      "NewCafe": false,
+      "newCafes": false,
+      "suggestList": false
+    },
+
     //  To learn more about the rules: https://eslint.org/docs/rules/
     "rules": {
       "semi": ["error", "always"],
